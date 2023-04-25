@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Navigation } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -46,14 +46,34 @@ const Janela2 = ({navigation})=> {
 }
 
 // Terceira janela
-const Janela3 = ()=> {
+const Janela3 = ({navigation})=> {
   return (
-    <View>
-      <Text>Janela 3</Text>
+    <View style= {styles.container}>
+      <Text>TERCEIRA JANELA</Text>
+      <TouchableOpacity 
+      style={{
+        borderRadius: 60,
+        borderWidth: 1,
+        borderColor: 'blue',
+        padding: 16,
+        margin:20}}
+        onPress={()=>navigation.navigate('Janela4')}>
+        <Text>TROCA DE JANELA</Text>
+      </TouchableOpacity>
+
+
     </View>
   )
 }
 
+//QUARTA JANELA
+const Janela4 = ()=> {
+  return (
+    <View style= {styles.container}>
+      <Text>QUARTA JANELA</Text>
+    </View>
+  )
+}
 //>>>>>>>>>>>>
 
 export default function App() {
@@ -67,6 +87,7 @@ export default function App() {
        navigationBarColor: 'green'}} />
       <Stack.Screen name ="Janela2" component={Janela2}/>
       <Stack.Screen name ="Janela3" component={Janela3}/>
+      <Stack.Screen name ="Janela4" component={Janela4}/>
     </Stack.Navigator>
     </NavigationContainer>
   );
