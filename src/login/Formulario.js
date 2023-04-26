@@ -18,10 +18,10 @@ const Formulario = () => {
     <ScrollView>
       <View style={Styles.container}>
 
-        <Entrada />
-        <Entrada />
-        <Entrada />
-        
+        <Entrada tipo="Nome"  cor='red' />
+        <Entrada tipo="Email" cor='blue' />
+        <Entrada tipo="Idade" cor='pink' />
+
         <TouchableOpacity
           onPress={() => {
             setClicou(true);
